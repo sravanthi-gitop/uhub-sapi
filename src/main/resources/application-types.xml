@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="XML-order-input" format="xml">
+      <types:example format="xml" element="order" location="examples/dw-tshirt-inputsample.xml"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#0fcf9bdf-4741-4976-abd1-d5e27b7455bb">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="XML-order-input[]"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
